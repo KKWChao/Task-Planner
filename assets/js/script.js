@@ -103,37 +103,99 @@ EDIT_TASK FUNCTION
 
 /* 
 #####################################################################
-#####################################################################
-<-                             CODE                                -> 
-#####################################################################
+##                                                                 ##
+##                            CODE                                 ## 
+##                                                                 ##
 ##################################################################### 
 */
 
+
+
+/////////////////////////////////////////////////////////////////////
+
+//                          VARIABLES                              //
+
+/////////////////////////////////////////////////////////////////////
+
 var main_El = $('#main-container')
+var currentDate = new Date()
+var dateTime = "Today: " + currentDate.getDate() + "/" 
+                + (currentDate.getMonth() + 1) + "/"
+                + currentDate.getFullYear() + " 0 "
+                + currentDate.getHours() + ":"
+                + currentDate.getMinutes() + ":"
+                + currentDate.getSeconds();
+
+
+/////////////////////////////////////////////////////////////////////
+
+//                              TIME                               //
+
+/////////////////////////////////////////////////////////////////////
+
+function today() {
+  var main_h2_El = document.getElementById('time-h2')
+
+  main_h2_El.innerText = new Date().toLocaleString()
+}
+
+
+/////////////////////////////////////////////////////////////////////
+
+//                     SETTER/GETTER/DELETER                       //
+
+/////////////////////////////////////////////////////////////////////
+
+function saveFeature(idx) {
+  var main_h2_El = document.getElementById('time-h2')
+  
+  
+}
+
+
+function deleteButtonFunction() {
+
+}
+
+
+/////////////////////////////////////////////////////////////////////
+
+//                       CORE FUNCTION                             //
+
+/////////////////////////////////////////////////////////////////////
+
 
 function timeCreator() {
-  var ul_El = document.createElement('ul')
-  main_El.append(ul_El)
-  console.log(1)
+  var main_div_El = document.createElement('div')
+  main_El.append(main_div_El)
+  
   for (let i=0; i<24; i++) {
-    var li_El = document.createElement('li')
-    li_El.setAttribute('data-type', i)
+    // creating elements for time slots
+    var time_a_El = document.createElement('a')
+    time_a_El.setAttribute('data-type', i)
 
-    li_El.innerHTML += i+1
-    ul_El.appendChild(li_El)
+    time_a_El.innerHTML += i+1+ " | "
+    main_div_El.append(time_a_El)
+
+    // save button for each time slot
+    var save_button = document.createElement('button')
+    save_button.setAttribute('data-type', i)
+    save_button.innerHTML = "SAVE"
+
+    time_a_El.append(save_button)
     
   }
 }
 
-function setListText(idx) {
-  var listItem = $('li[data-type|=idx]')
-}
+/////////////////////////////////////////////////////////////////////
 
+//                       MAIN FUNCTION                             //
 
-
+/////////////////////////////////////////////////////////////////////
 
 
 function main() {
   timeCreator()
+  today()
 }
 main()
