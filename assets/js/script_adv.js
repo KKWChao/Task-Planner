@@ -129,7 +129,7 @@ var dateTime = "Today: " + currentDate.getDate() + "/"
 
 /////////////////////////////////////////////////////////////////////
 
-//                              TIME                               //
+//                            TIME                                 //
 
 /////////////////////////////////////////////////////////////////////
 
@@ -142,20 +142,25 @@ function today() {
 
 /////////////////////////////////////////////////////////////////////
 
-//                     SETTER/GETTER/DELETER                       //
+//                  SAVING/GETTING/DELETING                        //
 
 /////////////////////////////////////////////////////////////////////
 
-function saveFeature(idx) {
+function saveLocalStorage(idx) {
   var main_h2_El = document.getElementById('time-h2')
   
   
+}
+
+function getLocalStorage() {
+
 }
 
 
 function deleteButtonFunction() {
 
 }
+
 
 
 /////////////////////////////////////////////////////////////////////
@@ -174,7 +179,7 @@ function timeCreator() {
     var time_a_El = document.createElement('a')
     time_a_El.setAttribute('data-type', i)
 
-    time_a_El.innerHTML += i+1+ " | "
+    time_a_El.innerHTML += i + " hour | "
     main_div_El.append(time_a_El)
 
     // save button for each time slot
