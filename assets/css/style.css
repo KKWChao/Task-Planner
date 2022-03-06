@@ -76,4 +76,10 @@ main div input {
 main div button {
   margin-left: 0.5em;
   width: 4em;
+  border-radius: 10px;
+}
+
+button img {
+  width: 2em;
+  height: auto;
 }
