@@ -35,9 +35,9 @@
     <h2 id="time-h2">Time: </h2>
   </div>
 
-  <main id="main-container">
+  <main id="main-container" onload = getLocalStorage()>
     <div id="container-9AM">
-      <p>09:00 AM</p>
+      <p id="time-9">09:00 AM</p>
       <input type="text" name="" id="text-9am">
       <button type="submit" id="save-9am"><img src="./assets/images/diskette.png" alt="Yogi Aprelliyanto Basic Outline - Flaticon"></button>
     </div>
@@ -83,7 +83,7 @@
       <input type="text" name="" id="text-4pm">
       <button type="submit" id="save-4pm"><img src="./assets/images/diskette.png" alt="Yogi Aprelliyanto Basic Outline - Flaticon"></button>
     </div>
-    
+
     <div id="container-5PM">
       <p>05:00 PM</p>
       <input type="text" name="" id="text-5pm">
