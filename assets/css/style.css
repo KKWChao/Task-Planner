@@ -70,7 +70,8 @@ main div p {
 
 main div input {
   width: 65%;
-  height: 4em
+  height: 4em;
+  padding: 1em;
 }
 
 main div button {
