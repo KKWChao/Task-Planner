@@ -13,22 +13,54 @@ var save_3pm_btn = $('#save-3pm')
 var save_4pm_btn = $('#save-4pm')
 var save_5pm_btn = $('#save-5pm')
 
-// text boxes for styling
-
-
-
 
 //////////////////////////////////
-//            Time              //
+//         Time/Color           //
 //////////////////////////////////
 
 function today() {
-  var main_h2_El = document.getElementById('time-h2')
+  var date = new Date();
+
+  var year = date.getFullYear();
+  var month = date.getMonth();
+  var day = date.getDate()
+  var hh = date.getHours();
+  var mm = date.getMinutes();
+  var ss = date.getSeconds();
+  let session = "AM";
+
+  var dater = day + "/" + month + "/" + year
+
+  if (hh == 0) {
+    hh = 12
+  }
+
+  if (hh >= 12) {
+    hh -= 12;
+    session = "PM"
+  }
+
+  hh = (hh < 10) ? "0" + hh:hh;
+  mm = (mm < 10) ? "0" + mm:mm;
+  ss = (ss < 10) ? "0" + ss:ss;
+
+  var time = hh + ":" + mm + ":" + ss + ":" + session;
+
+  // document.getElementB
+  var date_h2 = document.getElementById('date-h2')
+  date_h2.innerText = dater
+
+  var time_h2 = document.getElementById('clock-h2')
+  time_h2.innerText = time
+
+  setTimeout(function() {
+    today()
+  }, 1000)
+}
+
+
+function colorTime() {
   var currentTime = new Date().getHours();
-
-  main_h2_El.innerText = new Date().toLocaleString()
-
-  console.log(currentTime)
 
   if (currentTime == 9) {
     $('#text-9am').css('background', 'rgba(255, 87, 51, 0.5)')
@@ -101,17 +133,7 @@ function today() {
   } else {
     $('#text-5pm').css('background', 'rgba( 177, 255, 132, 0.5')
   }
-  
-
-
-
-  
-  
 }
-
-function colorTime() {
-}
-
 
 
 //////////////////////////////////
@@ -148,6 +170,7 @@ function getLocalStorage() {
 function main() {
 
   today()
+  colorTime()
   getLocalStorage()
 
   // eventlistners for each save icon

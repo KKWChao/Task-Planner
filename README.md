@@ -1,16 +1,32 @@
 # DAY PLANNER
-- a basic day planner for me
+a basic day planner for me
 
-### GOALS
-- Use HTML, CSS, JS to create a basic day planner
-- currently created with very basic js
-- planned to update JS for dynamically created items
-- 
+<img src="./assets/images/task-planner-screenshot.png">
 
 
-### CREATED WITH:
-* HTML
-* CSS
-* JS
+## GOALS:
+- [x] Use HTML, CSS, JS to create a basic day planner
+- [x] Create local storage and load from it
+- [x] Color code based on time
+- [_] Switch to advanced version with improved JS
 
-###
+
+## VERSIONS:
+
+#### BASIC VERSION: script_basic.js
+- local storage with multiple key items
+
+#### IDEAL VERSION: script_adv.js
+- use JS to dynamically create items 
+- better localstorage with objects 
+  - I.E. -> key: [{time:event}, {time:event},...]
+- Improve CSS
+
+
+
+## CREATED WITH:
+* [HTML]
+* [CSS]
+* [JS]
+* [Bootstrap](https://getbootstrap.com)
+* [JQuery](https://jquery.com)

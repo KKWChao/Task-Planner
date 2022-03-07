@@ -66,18 +66,26 @@ main div p {
   padding-left: 1em;
   padding-right: 1em;
   margin-right: 0.5em;
+  font-size: x-large;
+  border-radius: 7px;
 }
 
 main div input {
   width: 65%;
   height: 4em;
   padding: 1em;
+  border-radius: 10px;
 }
 
 main div button {
   margin-left: 0.5em;
   width: 4em;
   border-radius: 10px;
+  background: var(--text-color);
+}
+
+main div button:active {
+  background: var(--secondary-color);
 }
 
 button img {
